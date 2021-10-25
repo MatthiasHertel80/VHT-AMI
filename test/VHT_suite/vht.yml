@@ -1,0 +1,15 @@
+suite:
+  name: "Tensorflow lite micro Unit tests"
+  model: "VHT-Corstone-300"
+  configuration: ""
+  pre: "./scripts/setup.sh"
+  post: "mv ./elf/*.stdio ./out/"
+
+  tests:
+   - "Unity core tests":
+      executable: "./elf/unity_test.axf"
+      arguments: "--cyclelimit=10000000"
+      pre: "./scripts/prepare.sh add_test"
+      post: "echo something"
+      timeout: 20
+  
