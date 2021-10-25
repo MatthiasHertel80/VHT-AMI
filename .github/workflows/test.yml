@@ -27,7 +27,7 @@ jobs:
         instance_id: ${{ secrets.AWS_INSTANCE_ID }}
         aws_region: "eu-west-1"
         access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        secret_access_key: ${{ secrets.AWS_secret_access_key }}
+        secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         session_token: ${{ secrets.AWS_SESSION_TOKEN }}
         s3_bucket_name: orta-vht
 
