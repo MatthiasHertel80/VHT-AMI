@@ -29,5 +29,5 @@ jobs:
         access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         session_token: ${{ secrets.AWS_SESSION_TOKEN }}
-        s3_bucket_name: orta-vht
+        s3_bucket_name: gh-vht
 
