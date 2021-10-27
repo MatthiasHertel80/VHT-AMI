@@ -30,7 +30,10 @@ jobs:
         secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         session_token: ${{ secrets.AWS_SESSION_TOKEN }}
         s3_bucket_name: gh-vht
-        
+
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+
     - name: Fetch results from VHT Testsuite
       run: |
          tar tvf  ${{ github.workspace }}/VHT_suite_test/out.tar
