@@ -17,13 +17,13 @@ jobs:
     #- run: npm test
 
   # test action works running from the graph
-  test:
+  live-test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: ./
       with:
-        vht_in: ./test/VHT_suite
+        vht_in: ./test/VHT_suite_test
         instance_id: ${{ secrets.AWS_INSTANCE_ID }}
         aws_region: "eu-west-1"
         access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
