@@ -1,0 +1,24 @@
+suite:
+  name: "Tensorflow lite micro Unit tests"
+  model: "VHT-Corstone-300"
+  configuration: ""
+  working_dir: "/home/ubuntu/vhtwork"
+  pre: "/home/ubuntu/tool-inventory.sh && pip3 install unity-test-parser"
+  post: "" #"mv ./*.stdio ./out/"
+
+  tests:
+   - "Unity core tests":
+      executable: "./elf/unity_test.axf"
+      arguments: "-f ./model/fvp_config.txt --cyclelimit=10000000" 
+      pre: "./scripts/prepare.sh add_test"
+      #Convert unity basic report style to junit format
+      post: "python3 ./scripts/post_unity.py ./out/unity_test.axf.stdio ./out/unity_test.junit"
+      timeout: 20
+
+
+  builds:
+   - "dummy": 
+      shell: "ls ./elf -la"
+      pre: ""
+      post: ""
+  
