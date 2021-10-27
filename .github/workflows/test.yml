@@ -31,8 +31,8 @@ jobs:
         session_token: ${{ secrets.AWS_SESSION_TOKEN }}
         s3_bucket_name: gh-vht
 
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
+   # - name: Setup tmate session
+   #   uses: mxschmitt/action-tmate@v3
 
     - name: Fetch results from VHT Testsuite
       run: |
