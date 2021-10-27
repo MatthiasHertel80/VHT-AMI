@@ -36,9 +36,9 @@ jobs:
 
     - name: Fetch results from VHT Testsuite
       run: |
-         tar tvf  ${{ github.workspace }}/VHT_suite_test/out.tar
-         tar xvzf  ${{ github.workspace }}/VHT_suite_test/out.tar 
-         cat ./home/ubuntu/vhtwork/out/unity_test.junit
+         tar tvf  ${{ github.workspace }}/out.tar
+         tar xvzf  ${{ github.workspace }}/out.tar 
+         cat ${{ github.workspace }}/home/ubuntu/vhtwork/out/unity_test.junit
          
      
          
