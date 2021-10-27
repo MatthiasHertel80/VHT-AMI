@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ./
       with:
-        vht_in: ./test/VHT_suite_test
+        vht_in: ./VHT_suite_test
         instance_id: ${{ secrets.AWS_INSTANCE_ID }}
         aws_region: "eu-west-1"
         access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
