@@ -21,7 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: ./
+    - name: Run live test on latest plugin source
+      uses: ./
       with:
         vht_in: ./VHT_suite_test
         instance_id: ${{ secrets.AWS_INSTANCE_ID }}
@@ -40,6 +41,7 @@ jobs:
          tar xvzf  ${{ github.workspace }}/out.tar 
          cat ${{ github.workspace }}/home/ubuntu/vhtwork/out/unity_test.junit
          
-     
-         
-        
+    - name: Check expected junit output return from VHT
+      run: 
+          grep '<testsuites disabled="0" errors="0" failures="" tests="5" time="0.0">' ${{ github.workspace }}/home/ubuntu/vhtwork/out/unity_test.junit      
+   
